@@ -8,7 +8,8 @@ function NavBar(){
             <li><a href="#">nosotros</a></li>
             <li><a href="#">productos</a></li>
             <li><a href="#">contacto</a></li>
-            <CartWidget/>
+            <li><a href="#"><CartWidget/></a></li>
+            {/* <CartWidget/> */}
         </div>
     )
 }

@@ -27,7 +27,7 @@ const ItemCount = (props) => {
             </div>
             <div className='buttonContainer'>
                 <button onClick={miOnAdd}>confirmar</button>
-                <button onClick={resetear}>descartar</button>
+                <button onClick={resetear} disabled={contador===props.initial}>descartar</button>
             </div>
         </>
     )
