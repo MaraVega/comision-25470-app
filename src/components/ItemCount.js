@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const ItemCount = (props) => {
+const ItemCount = (props, onAdd) => {
     const [contador, setContador] = useState(props.initial)
 
     const restarClick = () =>{
@@ -17,7 +17,9 @@ const ItemCount = (props) => {
     const resetear =() => {
         setContador(props.initial)
     }
-    const miOnAdd = () => {}
+    const miOnAdd=()=>{
+        onAdd(contador)
+    }
     return ( 
         <>
             <p>Mi contador: {contador}</p>

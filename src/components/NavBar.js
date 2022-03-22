@@ -21,9 +21,8 @@ function NavBar(){
                     lapiceras
                 </p>
             </NavLink>
-            <NavLink to="/carrrito">
-                <CartWidget/>
-            </NavLink>
+            <CartWidget/>
+            
             {/* <li><a href="#"> </a></li>
             <li><a href="#">nosotros</a></li>
             <li><a href="#">cuadernos</a></li>
