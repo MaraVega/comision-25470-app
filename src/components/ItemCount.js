@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 
-const ItemCount = (props, onAdd) => {
-    const [contador, setContador] = useState(props.initial)
+const ItemCount = ({initial, stock, onAdd}) => {
+    const [contador, setContador] = useState(initial)
 
     const restarClick = () =>{
         if(contador > 1){
@@ -10,12 +10,12 @@ const ItemCount = (props, onAdd) => {
         }
     }
     const sumarClick = () => {
-        if(contador < props.stock){
+        if(contador < stock){
             setContador(contador+1)
         }
     }
     const resetear =() => {
-        setContador(props.initial)
+        setContador(initial)
     }
     const miOnAdd=()=>{
         onAdd(contador)
@@ -25,11 +25,11 @@ const ItemCount = (props, onAdd) => {
             <p>Mi contador: {contador}</p>
             <div className='buttonContainer'>
                 <button onClick={restarClick} disabled={contador===1}>-</button>
-                <button onClick={sumarClick} disabled={contador===props.stock}>+</button>
+                <button onClick={sumarClick} disabled={contador===stock}>+</button>
             </div>
             <div className='buttonContainer'>
                 <button onClick={miOnAdd}>confirmar</button>
-                <button onClick={resetear} disabled={contador===props.initial}>descartar</button>
+                <button onClick={resetear} disabled={contador===initial}>descartar</button>
             </div>
         </>
     )
