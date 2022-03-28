@@ -4,33 +4,34 @@ export const contexto = createContext()
 const { Provider } = contexto
 
 const CartContext=({ children })=>{
-    const [cart, setCart] = useState([]);
+    const [carrito, setCarrito] = useState([]);
 
     const borrarProducto = (id) => {
 
-        const auxCart = cart.filter(articulo => articulo.producto.id !== id);
-        setCart(auxCart);
+        const auxCart = carrito.filter(articulo => articulo.producto.id !== id);
+        setCarrito(auxCart);
     };
-    const agregarProducto= (producto, cantidad)=> {
-        const auxCart = [...cart];
+    const agregarProducto=(producto, cantidad)=> {
+        const auxCart = [...carrito];
         auxCart.push({ producto, cantidad });
-        setCart(auxCart);
+        setCarrito(auxCart);
+        console.log("funcion de cartcontext");
     }
-    const clear = (id) => {
-        setCart([]);
-    };
+    function clear() {
+        setCarrito([]);
+    }
     // if(cart.length > 0){
     //     setTotal(cart.reduce((total, product)=> total + product.price, 0))
     // }
     const valorDelProvider = {
-        cart,
-        setCart,
+        carrito,
+        setCarrito,
         borrarProducto,
         agregarProducto,
         clear,
     };
     return (
-        <Provider value={{ valorDelProvider }}>
+        <Provider value={ valorDelProvider }>
             {children}
         </Provider>
     );

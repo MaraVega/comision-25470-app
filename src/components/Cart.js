@@ -4,13 +4,13 @@ import { contexto } from './CartContext'
 
 
 const Cart = () => {
-  const {cart, borrarProducto}=  useContext(contexto)
+  const {carrito, borrarProducto}=  useContext(contexto)
 
   return (
     <>
       <div>Carrito</div>
       {
-      cart.map(articulo => (
+      carrito.map(articulo => (
           <div key={articulo.producto.id}>
             <p>{articulo.producto.nombre}</p>
             <p>{articulo.producto.precio}</p>

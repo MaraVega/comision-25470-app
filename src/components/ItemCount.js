@@ -17,8 +17,9 @@ const ItemCount = ({initial, stock, onAdd}) => {
     const resetear =() => {
         setContador(initial)
     }
-    const miOnAdd=()=>{
+    function miOnAdd() {
         onAdd(contador)
+        console.log("funcion de item count")
     }
     return ( 
         <>
